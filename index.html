@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR Generator & Scanner</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.7/minified/html5-qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>QR Code Generator & Scanner</h1>
+    <section class="card">
+      <h2>Generate QR</h2>
+      <label for="qr-text">Text / URL</label>
+      <input id="qr-text" placeholder="Enter text or URL" />
+      <div class="row">
+        <label for="qr-size">Size</label>
+        <select id="qr-size">
+          <option value="128">128</option>
+          <option value="192" selected>192</option>
+          <option value="256">256</option>
+          <option value="384">384</option>
+        </select>
+        <label for="qr-margin">Margin</label>
+        <select id="qr-margin">
+          <option value="0">0</option>
+          <option value="2" selected>2</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div class="row">
+        <button id="generate">Generate</button>
+        <button id="download" disabled>Download PNG</button>
+      </div>
+      <div id="qrcode" class="qrcode-box"></div>
+    </section>
+    <section class="card">
+      <h2>Scan QR</h2>
+      <div class="row">
+        <select id="camera-select"></select>
+        <button id="start-scan">Start</button>
+        <button id="stop-scan" disabled>Stop</button>
+      </div>
+      <div id="reader" class="reader"></div>
+      <div class="scan-result">
+        <label>Scanned Result</label>
+        <input id="scan-result" readonly />
+        <button id="copy-result" disabled>Copy</button>
+      </div>
+    </section>
+    <footer>
+      <small>Works on desktop (if camera available) and mobile. Permission required to access camera.</small>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+:root{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --accent:#0b5fff;
+  --muted:#666;
+}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  margin:0;
+  padding:20px;
+  color:#111;
+}
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+h1{ text-align:center; margin-bottom:18px }
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 6px 18px rgba(12,15,30,0.06);
+  margin-bottom:18px;
+}
+.row{ display:flex; gap:8px; align-items:center; margin:8px 0 }
+input[type=text], input, select{ padding:8px 10px; border-radius:8px; border:1px solid #ddd; flex:1 }
+button{ padding:8px 12px; border-radius:8px; border:none; background:var(--accent); color:#fff; cursor:pointer }
+button[disabled]{ opacity:0.5; cursor:not-allowed }
+.qrcode-box{ margin-top:12px; display:flex; justify-content:center }
+.reader{ width:100%; min-height:240px; background:#121212; border-radius:8px; overflow:hidden }
+.scan-result{ margin-top:12px; display:flex; gap:8px }
+footer{ text-align:center; color:var(--muted); margin-top:6px }
+label{ font-size:0.9rem; color:var(--muted) }
+@media (max-width:600px){ .row{ flex-direction:column; align-items:stretch } }
